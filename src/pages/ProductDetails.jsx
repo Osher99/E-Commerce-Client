@@ -22,7 +22,7 @@ const ProductDetails = () => {
               <div className="flex flex-col lg:flex-row gap-[30px] mb-[30px]">
                   <div className="flex-1 lg:max-w-[40%] lg:h-[540px] grad rounded-lg flex justify-center items-center">
                       <img
-                          src={`http://localhost:1337${data?.[0]?.attributes?.image?.data?.[0]?.attributes?.url}`}
+                          src={`https://zero-games-api.netlify.app${data?.[0]?.attributes?.image?.data?.[0]?.attributes?.url}`}
                           alt=""
                           className="w-full max-w-[55%]"
                       />
