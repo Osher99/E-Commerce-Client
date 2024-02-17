@@ -4,7 +4,7 @@ import { request } from "../request";
 import { HEBREW_CONSTANTS } from "../utils/constants.ts";
 import { generateUniqueId, getFullAddress } from "../utils/utils.ts";
 import { useNavigate } from "react-router-dom";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 export const useCheckOut = () => {
     // Define state variables for form inputs
@@ -20,6 +20,13 @@ export const useCheckOut = () => {
     const [loading, setLoading] = useState(false); // Add loading state
     const { cart, total, clearCart, removeFromCart, setBoughtCart, setBoughtTotal, setIsOpen } = useContext(CartContext);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (cart.length === 0) {
+          // Redirect the user to the home page
+          navigate('/');
+        }
+      }, [cart, navigate]);
 
     useEffect(() => {
         setIsOpen(false);
@@ -58,7 +65,6 @@ export const useCheckOut = () => {
 
     // Handle form submission
     const handleSubmit = async (e) => {
-
         if (!checkRequiredFields()) {
             return;
         }

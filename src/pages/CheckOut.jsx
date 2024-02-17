@@ -144,24 +144,41 @@ const CheckOut = () => {
                         </p>
                     </div>
                     {/* Payment Type */}
-                    <div className="mb-6 text-center">
-                        <h2 className="text-xl font-semibold mb-3">אמצעי תשלום</h2>
-                        <form onSubmit={handleSubmit}>
+                        <div className="mb-6 text-center">
+                            <h2 className="text-xl font-semibold mb-3">אמצעי תשלום</h2>
+                            <form onSubmit={handleSubmit}>
                             <div className="flex flex-col">
-                                <div className="mb-2">
-                                    <input className="ml-3 h-5 w-5" type="radio" id="cash" name="paymentType"
-                                           value="cash"
-                                           checked={paymentType === 'cash'} onChange={() => setPaymentType('cash')}
-                                           required/>
-                                    <label htmlFor="cash" className="ml-2 text-lg">מזומן לשליח</label>
-                                </div>
-                                <div>
-                                    <input className="ml-3 h-5 w-5" type="radio" id="bit" name="paymentType" value="bit"
-                                           checked={paymentType === 'bit'}
-                                           onChange={() => setPaymentType('bit')} required/>
-                                    <label htmlFor="bit" className="ml-2 text-lg">ביט (בקשת תשלום תישלח במייל ובווצאפ)</label>
-                                </div>
+                            <div className="mb-2">
+                                <input 
+                                    className="ml-3 h-5 w-5" 
+                                    type="radio" 
+                                    id="cash" 
+                                    name="paymentType"
+                                    value="cash"
+                                    checked={paymentType === 'cash'} 
+                                    onChange={() => setPaymentType('cash')} 
+                                    required
+                                />
+                                <label htmlFor="cash" className="ml-2 text-lg">מזומן לשליח</label>
                             </div>
+                            <div>
+                                <input 
+                                    className="ml-3 h-5 w-5" 
+                                    type="radio" 
+                                    id="bit" 
+                                    name="paymentType" 
+                                    value="bit"
+                                    checked={paymentType === 'bit'}
+                                    onChange={() => setPaymentType('bit')} 
+                                    required
+                                />
+                                <label htmlFor="bit" className="ml-2 text-lg">ביט (בקשת תשלום תישלח במייל ובווצאפ)</label>
+                            </div>
+                            {/* Red text to indicate missing selection */}
+                            {!paymentType && (
+                                <p className="text-red-500 text-sm">יש לבחור אחת מאפשרויות התשלום</p>
+                            )}
+                        </div>
                         </form>
                     </div>
                     {/* Complete Order Button */}
