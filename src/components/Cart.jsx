@@ -10,7 +10,7 @@ const Cart = () => {
 
   return (
       <div className="w-full h-full px-4 text-white">
-        <div className="overflow-y-auto overflow-x-hidden h-[75vh]">
+        <div className="overflow-y-auto overflow-x-hidden h-[60vh]">
             {/* close icon */}
             <div
                 className="text-4xl w-20 h-[100px] flex justify-start items-center cursor-pointer"

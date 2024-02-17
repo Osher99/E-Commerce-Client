@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8 dir-rtl">
             <div className="flex items-center mb-8">
-                <Logo /> {/* Render your logo component */}
+            <img className="w-[100%] logo-extra-style" src={Logo} alt="logo"/>
                 <h1 className="text-3xl font-semibold ml-4">עלינו</h1>
             </div>
             <div className="text-lg text-right">
