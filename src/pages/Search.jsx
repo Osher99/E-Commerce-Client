@@ -17,10 +17,12 @@ const Search = () => {
     const { data, searchVal, loading } = useSearch();
     return (
       <div className="mb-[30px] pt-40 md:pt-40 lg:pt-4 xl:pt-0">
-        <ClipLoader color={"#123abc"} loading={loading} css={override} size={150} />
+        <div className="loading-spinner" hidden={!loading}>
+            <ClipLoader color={"#123abc"} loading={loading} css={override} size={150} />
+        </div>
         {!loading && (
         <div className="container mx-auto">
-            <div className="flex justify-center gap-x-[30px]">
+            <div className={`flex ${data.length === 0 ? 'justify-between' : 'justify-center'} gap-x-[30px]`}>
                 <div>
                     {/* title */}
                     <div className="dir-rtl py-3 text-xl uppercase text-center lg:text-right">

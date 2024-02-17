@@ -20,8 +20,8 @@ const ProductDetails = () => {
 
   if (!data) {
       return (
-          <div className="container mx-auto dir-rtl">
-                <ClipLoader color={"#123abc"} loading css={override} size={150} />
+          <div className="container mx-auto dir-rtl loading-spinner">
+            <ClipLoader color={"#123abc"} loading css={override} size={150} />
           </div>
       );
   }

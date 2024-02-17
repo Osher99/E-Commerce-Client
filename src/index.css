@@ -120,3 +120,8 @@ h1, h2, h3 {
 .checkout-title {
   margin-top: 20px;
 }
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+}

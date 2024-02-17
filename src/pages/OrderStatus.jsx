@@ -18,7 +18,9 @@ const OrderStatus = () => {
     } = useOrderStatus();
     return (
         <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8 dir-rtl lg:mt-0 lg:mt-8 py-8 lg:py-0 dir-rtl">
-            <ClipLoader color={"#123abc"} loading={loading} css={override} size={150} />
+          <div className="loading-spinner" hidden={!loading}>
+                <ClipLoader color={"#123abc"} loading={loading} css={override} size={150} />
+            </div>
             {!loading && (
                 <>
                     <h1 className="text-3xl font-semibold mb-6 text-center">בדיקת מעקב הזמנה</h1>
