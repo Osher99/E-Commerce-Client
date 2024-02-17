@@ -67,7 +67,7 @@ const CheckOut = () => {
                                         required 
                                         minLength="3" 
                                         className="input text-center" 
-                                        placeholder="(חובה) שם מלא"
+                                        placeholder="שם מלא (חובה)"
                                         value={fullName}
                                         onChange={(e) => setFullName(e.target.value)}
                                     />
@@ -80,7 +80,7 @@ const CheckOut = () => {
                                         type="email" 
                                         required 
                                         className="input text-center" 
-                                        placeholder="(חובה) אימייל"
+                                        placeholder="אימייל (חובה)"
                                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
@@ -113,11 +113,11 @@ const CheckOut = () => {
                         <h2 className="text-xl font-semibold mb-3">פרטי כתובת</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <input type="text" className="input text-center" placeholder="(חובה) עיר" value={city}
+                                <input type="text" className="input text-center" placeholder="עיר (חובה)" value={city}
                                        onChange={(e) => setCity(e.target.value)}/>
-                                <input type="text" className="input text-center" placeholder="(חובה) רחוב" value={street}
+                                <input type="text" className="input text-center" placeholder="רחוב (חובה)" value={street}
                                        onChange={(e) => setStreet(e.target.value)}/>
-                                <input type="text" className="input text-center" placeholder="(חובה) מספר בית"
+                                <input type="text" className="input text-center" placeholder="מספר בית (חובה)"
                                        value={houseNumber}
                                        onChange={(e) => setHouseNumber(e.target.value)}/>
                                 <input type="text" className="input text-center" placeholder="מספר דירה"

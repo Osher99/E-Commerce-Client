@@ -125,3 +125,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
 }
+
+.swiper-pagination {
+  margin-bottom: -8px;
+}
