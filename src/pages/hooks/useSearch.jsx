@@ -12,6 +12,7 @@ export const useSearch = () => {
     const { data } = useFetch(`${API_URL_PATHS.PRODUCT_SEARCH_BY_VAL}${searchVal}`);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         if (!data) {
             setLoading(true);
         } else {

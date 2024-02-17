@@ -11,6 +11,7 @@ export const useProducts = () => {
     const { data } = useFetch(`${API_URL_PATHS.PRODUCTS_BY_CATEGORY_ID}${id}`);
     useEffect(() => {
         setLoading(true);
+        window.scrollTo(0, 0);
         if (data) {
             setTitle(data?.[0]?.attributes?.categories?.data?.[0]?.attributes?.title);
             setLoading(false);
