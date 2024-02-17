@@ -38,7 +38,7 @@ const Product = ({ product }: Props) => {
                   {/* title */}
                   <div className="title-container">
                       <div
-                          className="text-[14px] mb-4 mr-[10px]">{product?.attributes?.title?.length > 45 ? `${product?.attributes?.title?.substring(0, 45)}...` : product?.attributes?.title}</div>
+                          className="text-[14px] mb-4 mr-[10px]">{product?.attributes?.title?.length > 40 ? `${product?.attributes?.title?.substring(0, 35)}...` : product?.attributes?.title}</div>
                       {/* price */}
                       <div className="text-lg text-accent mt-[5rem]">₪{product?.attributes?.price}</div>
                   </div>
@@ -47,7 +47,7 @@ const Product = ({ product }: Props) => {
                           event.preventDefault();
                           addToCart(product, product?.id);
                       }}
-                      className="btn btn-accent font-semibold text-xl transform transition-transform hover:scale-105 hover:shadow-md cart-icon"
+                      className="btn btn-accent font-semibold text-xl transform transition-transform hover:scale-105 hover:shadow-md cart-icon  p-5"
                   >
                       <IoCartOutline/>
                   </button>
