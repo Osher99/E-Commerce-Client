@@ -3,6 +3,7 @@ import { useCheckOut } from "../hooks/useCheckOut";
 import { BiSolidTrash, BiSolidTruck } from "react-icons/bi";
 import { css } from "@emotion/react"; // Import css function from react-spinners
 import { ClipLoader } from "react-spinners"; // Import ClipLoader spinner component
+import { BACK_END_URL } from '../utils/constants.ts';
 
 const override = css`
   display: flex;  

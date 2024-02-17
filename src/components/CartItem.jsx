@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import Qty from "./Qty";
 import { useCartItem } from "../hooks/useCartItem";
+import { BACK_END_URL } from '../utils/constants.ts';
 
 interface Props {
     item: any;

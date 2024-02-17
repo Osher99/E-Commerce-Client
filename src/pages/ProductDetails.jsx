@@ -1,6 +1,7 @@
 import React from 'react';
 import RelatedProducts from "../components/RelatedProducts";
 import { useProductDetails } from "./hooks/useProductDetails";
+import { BACK_END_URL } from '../utils/constants.ts';
 
 const ProductDetails = () => {
   const {

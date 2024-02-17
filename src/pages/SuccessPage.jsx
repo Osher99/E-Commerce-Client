@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiCheckCircle } from 'react-icons/fi';
 import { useOrderSuccess } from "../hooks/useOrderSuccess"; // Importing an example icon from react-icons
+import { BACK_END_URL } from '../utils/constants.ts';
 
 const OrderSuccess = () => {
     const { boughtCart, boughtTotal, orderNumber } = useOrderSuccess();
