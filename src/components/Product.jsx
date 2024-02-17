@@ -33,12 +33,12 @@ const Product = ({ product }: Props) => {
               <div className="px-3 pb-8 flex-col justify-between h-auto">
                   {/* category title */}
                   <div
-                      className="product-category-title text-sm text-accent capitalize mb-2">{product?.attributes?.categories?.data?.[0]?.attributes?.title}</div>
+                      className="product-category-title text-sm text-accent capitalize mb-2 mr-[10px]">{product?.attributes?.categories?.data?.[0]?.attributes?.title}</div>
                   <hr/>
                   {/* title */}
                   <div className="title-container">
                       <div
-                          className="text-[14px] mb-4">{product?.attributes?.title?.length > 45 ? `${product?.attributes?.title?.substring(0, 45)}...` : product?.attributes?.title}</div>
+                          className="text-[14px] mb-4 mr-[10px]">{product?.attributes?.title?.length > 45 ? `${product?.attributes?.title?.substring(0, 45)}...` : product?.attributes?.title}</div>
                       {/* price */}
                       <div className="text-lg text-accent mt-[5rem]">₪{product?.attributes?.price}</div>
                   </div>
