@@ -11,3 +11,5 @@ export const HEBREW_CONSTANTS = {
     DELIVERY_TYPE_EXPRESS: 'שליח עד הבית',
     CONFIRMED_DELIVERY_STATUS: 'אושרה'
 };
+
+export const BACK_END_URL = 'https://zerogames-api.onrender.com';

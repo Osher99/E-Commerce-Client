@@ -20,7 +20,7 @@ const OrderSuccess = () => {
                         <div key={product?.id} className="bg-white rounded-md p-4 m-2 flex justify-between">
                             <div className="flex justify-between items-center">
                                 <img
-                                    src={`https://zero-games-api.netlify.app${product?.attributes?.image?.data?.[0]?.attributes?.url}`}
+                                    src={`${BACK_END_URL}${product?.attributes?.image?.data?.[0]?.attributes?.url}`}
                                     alt={product?.attributes?.title}
                                     className="w-24 h-24 flex items-center justify-between object-cover mr-4"
                                 />

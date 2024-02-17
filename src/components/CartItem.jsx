@@ -14,7 +14,7 @@ const CartItem = ({ item }: Props) => {
         <div className="flex gap-x-8 dir-rtl">
             <Link to={`product/${item?.id}`} className="w-[70px] h-[70px]">
                 <img
-                    src={`https://zero-games-api.netlify.app${item?.attributes?.image?.data?.[0]?.attributes?.url}`}
+                    src={`${BACK_END_URL}${item?.attributes?.image?.data?.[0]?.attributes?.url}`}
                     alt=""
                 />
             </Link>
