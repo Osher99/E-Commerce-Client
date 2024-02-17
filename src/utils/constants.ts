@@ -12,4 +12,4 @@ export const HEBREW_CONSTANTS = {
     CONFIRMED_DELIVERY_STATUS: 'אושרה'
 };
 
-export const BACK_END_URL = 'http://localhost:1337';
+export const BACK_END_URL = 'https://zerogames-api.onrender.com';
