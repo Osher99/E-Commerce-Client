@@ -9,6 +9,7 @@ const override = css`
     justify-content: center;
     margin: 0 auto;
     border-color: lightgreen;
+    align-items: center;
 `;
 
 const OrderStatus = () => {

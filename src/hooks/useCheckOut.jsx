@@ -26,8 +26,43 @@ export const useCheckOut = () => {
         window.scrollTo(0, 0);
     }, [setIsOpen]);
 
+    const checkRequiredFields = () => {
+        let isValid = true;
+        if (!fullName || fullName === '') {
+            toast.error('שדה שם מלא חסר או לא תקין, אנא מלא את כל שדות החובה');
+            isValid = false;
+        }
+        if (!phone || phone === '') {
+            toast.error('שדה מספר טלפון חסר או לא תקין, אנא מלא את כל שדות החובה');
+            isValid = false;
+        }
+        if (!email || email === '') {
+            toast.error('שדה אימייל חסר או לא תקין, אנא מלא את כל שדות החובה');
+            isValid = false;
+        }
+        if (!city || city === '') {
+            toast.error('שדה עיר חסר או לא תקין, אנא מלא את כל שדות החובה');
+            isValid = false;
+        }
+        if (!street || street === '') {
+            toast.error('שדה רחוב חסר או לא תקין, אנא מלא את כל שדות החובה');
+            isValid = false;
+        }
+        if (!houseNumber || houseNumber === '') {
+            toast.error('שדה מספר בית חסר או לא תקין, אנא מלא את כל שדות החובה');
+            isValid = false;
+        }
+        
+        return isValid;
+    };
+
     // Handle form submission
     const handleSubmit = async (e) => {
+
+        if (!checkRequiredFields()) {
+            return;
+        }
+
         e.preventDefault();
         const orderId = generateUniqueId();
         setLoading(true); // Set loading state to true when API call starts
@@ -61,5 +96,5 @@ export const useCheckOut = () => {
         fullName, setFullName, email, setEmail, phone, setPhone, city, setCity, street, setStreet, houseNumber,
         setHouseNumber, apartment, setApartment, zipCode, setZipCode, paymentType, setPaymentType, handleSubmit,
         cart, removeFromCart, loading, total
-    }
-}
+    };
+};

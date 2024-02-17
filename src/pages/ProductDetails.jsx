@@ -2,6 +2,16 @@ import React from 'react';
 import RelatedProducts from "../components/RelatedProducts";
 import { useProductDetails } from "./hooks/useProductDetails";
 import { BACK_END_URL } from '../utils/constants.ts';
+import { css } from "@emotion/react"; // Import css function from react-spinners
+import { ClipLoader } from "react-spinners"; // Import ClipLoader spinner component
+
+export const override = css`
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-color: lightgreen;
+    align-items: center;
+`;
 
 const ProductDetails = () => {
   const {
@@ -11,7 +21,7 @@ const ProductDetails = () => {
   if (!data) {
       return (
           <div className="container mx-auto dir-rtl">
-              טוען...
+                <ClipLoader color={"#123abc"} loading css={override} size={150} />
           </div>
       );
   }

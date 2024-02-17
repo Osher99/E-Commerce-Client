@@ -6,14 +6,20 @@ import { API_URL_PATHS } from "../../utils/constants.ts";
 export const useProducts = () => {
     const { id } = useParams();
     const [title, setTitle] = useState(null);
+    const [loading, setLoading] = useState(false);
+
     const { data } = useFetch(`${API_URL_PATHS.PRODUCTS_BY_CATEGORY_ID}${id}`);
     useEffect(() => {
+        setLoading(true);
         if (data) {
-            setTitle(data?.[0]?.attributes?.categories?.data?.[0]?.attributes?.title)
+            setTitle(data?.[0]?.attributes?.categories?.data?.[0]?.attributes?.title);
+            setLoading(false);
         }
     }, [data]);
+    
     return {
         data,
-        title
+        title,
+        loading
     };
 };

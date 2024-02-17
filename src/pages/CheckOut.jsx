@@ -10,6 +10,7 @@ const override = css`
   justify-content: center;
   margin: 0 auto;
   border-color: lightgreen;
+  align-items: center;
 `;
 
 const CheckOut = () => {
@@ -58,15 +59,50 @@ const CheckOut = () => {
                         <h2 className="text-xl font-semibold mb-3">פרטים אישיים</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <input type="text" required className="input text-center" placeholder="שם מלא"
-                                       value={fullName}
-                                       onChange={(e) => setFullName(e.target.value)}/>
-                                <input type="email" required className="input text-center" placeholder="אימייל"
-                                       value={email}
-                                       onChange={(e) => setEmail(e.target.value)}/>
-                                <input type="tel" required className="input text-center" placeholder="מספר טלפון"
-                                       value={phone}
-                                       onChange={(e) => setPhone(e.target.value)}/>
+                                <div className="flex flex-col">
+                                    <input 
+                                        type="text" 
+                                        required 
+                                        minLength="3" 
+                                        className="input text-center" 
+                                        placeholder="(חובה) שם מלא"
+                                        value={fullName}
+                                        onChange={(e) => setFullName(e.target.value)}
+                                    />
+                                    {fullName && fullName.length < 3 && (
+                                        <p className="text-xs text-red-500 mt-1">שם מלא חייב להיות לפחות 3 תווים</p>
+                                    )}
+                                </div>
+                                <div className="flex flex-col">
+                                    <input 
+                                        type="email" 
+                                        required 
+                                        className="input text-center" 
+                                        placeholder="(חובה) אימייל"
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                    {email && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) && (
+                                        <p className="text-xs text-red-500 mt-1">אימייל לא חוקי</p>
+                                    )}
+                                </div>
+                                <div className="flex flex-col">
+                                    <input 
+                                        type="tel" 
+                                        required 
+                                        minLength="10" 
+                                        maxLength="10" 
+                                        pattern="[0-9]{10}" 
+                                        className="input text-center" 
+                                        placeholder="(חובה) מספר טלפון"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                    />
+                                    {phone && !/^[0-9]{10}$/.test(phone) && (
+                                        <p className="text-xs text-red-500 mt-1">מספר טלפון לא חוקי</p>
+                                    )}
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -75,11 +111,11 @@ const CheckOut = () => {
                         <h2 className="text-xl font-semibold mb-3">פרטי כתובת</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <input type="text" className="input text-center" placeholder="עיר" value={city}
+                                <input type="text" className="input text-center" placeholder="(חובה) עיר" value={city}
                                        onChange={(e) => setCity(e.target.value)}/>
-                                <input type="text" className="input text-center" placeholder="רחוב" value={street}
+                                <input type="text" className="input text-center" placeholder="(חובה) רחוב" value={street}
                                        onChange={(e) => setStreet(e.target.value)}/>
-                                <input type="text" className="input text-center" placeholder="מספר בית"
+                                <input type="text" className="input text-center" placeholder="(חובה) מספר בית"
                                        value={houseNumber}
                                        onChange={(e) => setHouseNumber(e.target.value)}/>
                                 <input type="text" className="input text-center" placeholder="מספר דירה"

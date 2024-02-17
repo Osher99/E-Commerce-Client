@@ -21,8 +21,9 @@ const Footer = () => {
                       type="text"
                       placeholder="האימייל שלך"
                       className="input text-center dir-rtl"
+                      disabled
                   />
-                  <button className="btn btn-accent min-w-[150px] dir-rtl">
+                  <button disabled className="btn btn-accent min-w-[150px] dir-rtl">
                       הירשם
                   </button>
               </form>
