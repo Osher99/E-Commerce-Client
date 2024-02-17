@@ -76,7 +76,6 @@ h1, h2, h3 {
 }
 
 .toast-container {
-  width: 19%!important;
   display: flex;
   justify-content: center;
   font-weight: bold;

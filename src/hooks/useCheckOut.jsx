@@ -34,33 +34,32 @@ export const useCheckOut = () => {
     }, [setIsOpen]);
 
     const checkRequiredFields = () => {
-        let isValid = true;
         if (!fullName || fullName === '') {
             toast.error('שדה שם מלא חסר או לא תקין, אנא מלא את כל שדות החובה');
-            isValid = false;
+            return false;
         }
         if (!phone || phone === '') {
             toast.error('שדה מספר טלפון חסר או לא תקין, אנא מלא את כל שדות החובה');
-            isValid = false;
+            return false;
         }
         if (!email || email === '') {
             toast.error('שדה אימייל חסר או לא תקין, אנא מלא את כל שדות החובה');
-            isValid = false;
+            return false;
         }
         if (!city || city === '') {
             toast.error('שדה עיר חסר או לא תקין, אנא מלא את כל שדות החובה');
-            isValid = false;
+            return false;
         }
         if (!street || street === '') {
             toast.error('שדה רחוב חסר או לא תקין, אנא מלא את כל שדות החובה');
-            isValid = false;
+            return false;
         }
         if (!houseNumber || houseNumber === '') {
             toast.error('שדה מספר בית חסר או לא תקין, אנא מלא את כל שדות החובה');
-            isValid = false;
+            return false;
         }
         
-        return isValid;
+        return true;
     };
 
     // Handle form submission
