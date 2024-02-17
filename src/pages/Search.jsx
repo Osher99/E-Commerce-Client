@@ -22,7 +22,7 @@ const Search = () => {
         </div>
         {!loading && (
         <div className="container mx-auto">
-            <div className={`flex ${data.length === 0 ? 'justify-between' : 'justify-center'} gap-x-[30px]`}>
+            <div className={`flex ${!data || data?.length === 0 ? 'justify-between' : 'justify-center'} gap-x-[30px]`}>
                 <div>
                     {/* title */}
                     <div className="dir-rtl py-3 text-xl uppercase text-center lg:text-right">
